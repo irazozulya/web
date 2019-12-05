@@ -1,14 +1,11 @@
-    var num = 40;
-    if (num > 0) {
-        var temp = num;
-        var text = "";
-        while (temp) {
-            if (!(num % temp)) {
-                text += "Дільник: " + temp + "; частка: " + (num / temp) + "\r\n";
-            }
-            temp--;
-        }
-        console.log(text);
-    } else {
-        console.log("Неправильне значення числа!")
-    }
+const http = require('http')
+const hostname = '127.0.0.1'
+const port = 3000
+const server = http.createServer((req, res) => {
+    res.statusCode = 200
+    res.setHeader('Content-Type', 'text/plain')  
+    res.end('Hi there!\n')
+})
+server.listen(port, hostname, () => { 
+    console.log(`Server running at http://${hostname}:${port}/`)
+}) 

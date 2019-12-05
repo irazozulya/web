@@ -1,11 +1,43 @@
-const http = require('http')
-const hostname = '127.0.0.1'
-const port = 3000
-const server = http.createServer((req, res) => {
-    res.statusCode = 200
-    res.setHeader('Content-Type', 'text/plain')  
-    res.end('Hi there!\n')
+const express = require('express')
+const app = express()
+
+const PORT = process.env.PORT || 80
+
+app.get('/', (req, res) => {
+    res.end(`
+        <div>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="/">Cats</a>
+                    </li>
+                    <li>
+                        <a href="/dogs">Dogs</a>
+                    </li>
+                </ul>
+            </nav>
+            <h1>CAAAAAATS</h1>
+        </div>
+    `)
 })
-server.listen(port, hostname, () => { 
-    console.log(`Server running at http://${hostname}:${port}/`)
-}) 
+app.get('/dogs', (req, res) => {
+    res.end(`
+        <div>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="/">Cats</a>
+                    </li>
+                    <li>
+                        <a href="/dogs">Dogs</a>
+                    </li>
+                </ul>
+            </nav>
+            <h1>DOOOOOOGS</h1>
+        </div>
+    `)
+})
+
+app.listen(PORT, () => {
+    console.log("Server is runnig")
+})
