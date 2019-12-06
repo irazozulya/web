@@ -10,6 +10,7 @@
   "author": "\"ira\"",
   "license": "ISC",
   "dependencies": {
+    "heroku-cli": "^7.0.9",
     "lodash": "^4.17.15"
   },
   "devDependencies": {
@@ -23,6 +24,6 @@
   "prettier": "prettier --config .prettierrc.json --write src/**/*.js",
   "doc": "esdoc --out docs/src/ --readme ./README.md",
   "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
-  "precommit":"npm run prettier",
+  "precommit": "npm run prettier",
   "prepush": "call npm run lint && call npm run test"
 }
