@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 
-const PORT = process.env.PORT || 80
+const port = process.env.PORT || 80
 
 app.get('/', (req, res) => {
     res.end(`
@@ -38,6 +38,6 @@ app.get('/dogs', (req, res) => {
     `)
 })
 
-app.listen(PORT, () => {
+app.listen(port, () => {
     console.log("Server is runnig")
 })
