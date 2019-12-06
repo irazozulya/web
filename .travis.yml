@@ -1,6 +1,14 @@
 language: node_js
 node_js:
    - node
-script:
+script: npm test
+deploy:
+   provider: heroku
+   api_key:
+      secure: 59e9b9c7-db26-4036-9653-b2cd38df8e28
+   app: web-ira-zozulya
+   on:
+      repo: irazozulya/web
+  strategy: git_
 notifications:
    email: false
