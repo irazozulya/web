@@ -17,7 +17,6 @@ app.get('/', (req, res) => {
                 </ul>
             </nav>
             <h1>CAAAAAATS</h1>
-            <div>Changes</div>
         </div>
     `)
 })
